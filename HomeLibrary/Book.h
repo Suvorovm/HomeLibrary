@@ -17,7 +17,7 @@ public:
 	//Конструктор с параметрами
 	Book(string authorName, string shurName, string genre, tm year);
 	//конструктор копирования
-	Book(Book& book);
+	Book(const Book& book);
 	//конструктор без параметров
 	Book();
 	//диструктор

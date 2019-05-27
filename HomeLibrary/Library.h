@@ -14,6 +14,8 @@ public:
 	vector<Book> GetBooksByAuthName(string AuthorName);
 	//—писок книг в данный год
 	vector<Book> GetBooksByYear(tm year);
+	//Cписок книг фамили€ автора которых = surname
+	vector<Book> GetBooksBySurname(string shurname);
 	//конструктор
 	Library(Book book);
 	//конструктор копировани€
