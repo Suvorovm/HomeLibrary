@@ -1,0 +1,24 @@
+#pragma once
+#include<vector>	
+#include <string>
+#include "Book.h"
+using namespace std;
+class Library
+{
+private:
+	vector<Book> books;
+public:
+	
+	Library();
+	//возвращаем список, т.к может быть несколько авторов с одной фамилией
+	vector<Book> GetBooksByAuthName(string AuthorName);
+	//Список книг в данный год
+	vector<Book> GetBooksByYear(tm year);
+	//конструктор
+	Library(Book book);
+	//конструктор копирования
+	Library(Library& libr);
+	//деструктор
+	~Library();
+};
+
