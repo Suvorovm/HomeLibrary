@@ -20,6 +20,11 @@ string Book::GetSurname()
 	return this->surname;
 }
 
+string Book::GetNameBook()
+{
+	return this->nameBook;
+}
+
 tm Book::GetYear()
 {
 	return this->year;
@@ -30,13 +35,14 @@ string Book::GetGenr()
 	return genre;
 }
 
-Book::Book(string authorName, string surname, string genre, tm year)
+Book::Book(string authorName, string surname, string genre, tm year,string nameBook)
 {
 
 	this->authorName = authorName;
 	this->genre = surname;
 	this->surname = surname;
 	this->year = year;
+	this->nameBook = nameBook;
 }
 
 Book::Book(const Book & book)
@@ -45,6 +51,7 @@ Book::Book(const Book & book)
 	this->genre = book.genre;
 	this->surname = book.surname;
 	this->year = book.year;
+	this->nameBook = book.nameBook;
 }
 
 

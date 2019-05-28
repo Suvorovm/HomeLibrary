@@ -10,6 +10,7 @@ private:
 public:
 	
 	Library();
+	void AddBook(Book bk);
 	//возвращаем список, т.к может быть несколько авторов с одной фамилией
 	vector<Book> GetBooksByAuthName(string AuthorName);
 	//Список книг в данный год

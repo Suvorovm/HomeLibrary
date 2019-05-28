@@ -7,15 +7,17 @@ private:
 	string authorName;//поля класа 
 	string surname;
 	string genre;
+	string nameBook;
 	tm year;
 public:
 	//Геттеры - возварщающие значения
 	string GetAuthorName();
 	string GetSurname();
+	string GetNameBook();
 	tm GetYear();
 	string GetGenr();
 	//Конструктор с параметрами
-	Book(string authorName, string shurName, string genre, tm year);
+	Book(string authorName, string shurName, string genre, tm year,string nameBook);
 	//конструктор копирования
 	Book(const Book& book);
 	//конструктор без параметров

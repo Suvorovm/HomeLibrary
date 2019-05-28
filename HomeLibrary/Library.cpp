@@ -8,6 +8,11 @@ Library::Library()
 	books.push_back(firstBook);
 }
 
+void Library::AddBook(Book bk)
+{
+	books.push_back(bk);
+}
+
 vector<Book> Library::GetBooksByAuthName(string authorName)
 {
 	vector<Book> resultVector;
