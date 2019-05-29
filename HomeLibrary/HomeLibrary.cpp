@@ -27,7 +27,7 @@ void printAddBook() {
 }
 int main()
 {
-	setlocale(LC_ALL, "rus");
+	setlocale(LC_ALL, "Rus");
 	int forCase = 5;
 	Library homeLibary;
 	string nameAuth;
@@ -36,7 +36,8 @@ int main()
 	string surname;
 	string tmp;
 	tm year;
-	while (true) {
+	bool flag = true;
+	while (flag) {
 		printMenu();
 		string str;
 		tm parametrs;
@@ -46,9 +47,11 @@ int main()
 		{
 		case 1: {
 			printAddBook();
-			cin >> nameAuth >> surname;
+			cin >> nameAuth ;
+			cin>> surname;
 			cin >> tmp;
-			cin >> nameBook >> genre;
+			cin >> nameBook;
+			cin >> genre;
 			year.tm_year = stoi(tmp);
 			Book mybook(nameAuth, surname, genre, year, nameBook);
 			homeLibary.AddBook(mybook);
@@ -79,12 +82,19 @@ int main()
 			default:
 				break;
 			}
-			break;
-			cout << "Книга";
-			for (size_t i = 0; i < result.capacity(); i++)
-			{
-
+			
+			cout << "Книги\n";
+			if (result.capacity() != 0) {
+				for (size_t i = 0; i < result.capacity(); i++)
+				{
+					cout << result[i].GetAuthorName() <<"\t"<<result[i].GetGenr()<<"\t"<<result[i].GetNameBook()
+						<<"\t"<<result[i].GetSurname()<<"\t"<<result[i].GetYear().tm_year<<"\n";
+				}
 			}
+			else {
+				cout << "Нет книг с данным автором\n";
+			}
+			break;
 		}
 		case 3:
 			int n;
@@ -92,7 +102,9 @@ int main()
 		case 4:
 			
 			break;
+			
 		default:
+			flag = false;
 			break;
 		}
 		

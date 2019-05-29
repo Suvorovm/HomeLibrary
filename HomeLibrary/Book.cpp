@@ -39,7 +39,7 @@ Book::Book(string authorName, string surname, string genre, tm year,string nameB
 {
 
 	this->authorName = authorName;
-	this->genre = surname;
+	this->genre = genre;
 	this->surname = surname;
 	this->year = year;
 	this->nameBook = nameBook;

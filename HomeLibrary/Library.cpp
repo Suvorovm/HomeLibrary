@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "Library.h"
-
+#include "Book.h"
 
 Library::Library()
 {
@@ -38,7 +38,13 @@ vector<Book> Library::GetBooksByAuthName(string authorName)
 
 vector<Book> Library::GetBooksByYear(tm year)
 {
-	return vector<Book>();
+	vector<Book> result;
+	for (size_t i = 0; i < books.capacity(); i++)
+	{
+		if (books[i].GetYear().tm_year == year.tm_year)
+			result.push_back(books[i]);
+	}
+	return result;
 }
 
 vector<Book> Library::GetBooksBySurname(string shurname)
