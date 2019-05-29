@@ -26,18 +26,18 @@ void Library::AddBook(Book bk)
 vector<Book> Library::SortByAutherName()
 {
 	vector<Book> result(books);
-	for (size_t i = 0; i < books.capacity()-1; i++)
+	for (size_t i = 1; i < books.capacity(); i++)
 	{
 		
-		for (size_t j = i; j < books.capacity()-1; j++)
+		for (size_t j = 1; j < books.capacity(); j++)
 		{
-			string str1 = result[i].GetAuthorName();
-			string str2 = result[i + 1].GetAuthorName();
+			string str1 = result[j].GetAuthorName();
+			string str2 = result[j - 1].GetAuthorName();
 			
-			if (str1.compare(str2)>0) {
-				Book tmp = result[i + 1];
-				books[i + 1] = result[i];
-				books[i] = tmp;
+			if (str1.compare(str2)<0) {
+				Book tmp = result[j - 1];
+				books[j - 1] = result[j];
+				books[j] = tmp;
 			}
 		}
 	}

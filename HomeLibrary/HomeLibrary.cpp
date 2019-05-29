@@ -6,7 +6,7 @@
 #include "Book.h"
 #include "Library.h"
 #include<string>
-
+#include <windows.h>
 using namespace std;
 void printMenu() {
 	cout << "Выбереите действие \n";
@@ -27,17 +27,19 @@ void printAddBook() {
 }
 int main()
 {
-	setlocale(LC_ALL, "Rus");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 	int forCase = 5;
 	Library homeLibary;
-	string nameAuth;
-	string genre;
-	string nameBook;
-	string surname;
-	string tmp;
-	tm year;
+	
 	bool flag = true;
 	while (flag) {
+		string nameAuth;
+		string genre;
+		string nameBook;
+		string surname;
+		string tmp;
+		tm year;
 		printMenu();
 		string str;
 		tm parametrs;

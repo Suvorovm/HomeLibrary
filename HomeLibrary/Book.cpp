@@ -10,6 +10,11 @@ Book::Book()
 	this->year.tm_year = g;
 }
 
+string Book::deepCopyng(string source)
+{
+	return string(source);
+}
+
 string Book::GetAuthorName()
 {
 	return this->authorName;
@@ -40,20 +45,20 @@ string Book::GetGenr()
 Book::Book(string authorName, string surname, string genre, tm year,string nameBook)
 {
 
-	this->authorName = authorName;
-	this->genre = genre;
-	this->surname = surname;
+	this->authorName = deepCopyng(authorName);
+	this->genre = deepCopyng(genre);
+	this->surname = deepCopyng( surname);
 	this->year = year;
-	this->nameBook = nameBook;
+	this->nameBook = deepCopyng(nameBook);
 }
 
 Book::Book(const Book & book)
 {
-	this->authorName = book.authorName;
-	this->genre = book.genre;
+	this->authorName = deepCopyng( book.authorName);
+	this->genre = deepCopyng(book.genre);
 	this->surname = book.surname;
 	this->year = book.year;
-	this->nameBook = book.nameBook;
+	this->nameBook = deepCopyng( book.nameBook);
 }
 
 

@@ -9,6 +9,8 @@ private:
 	string genre;
 	string nameBook;
 	tm year;
+	//копирование строк
+	string deepCopyng(string source);
 public:
 	//Геттеры - возварщающие значения
 	string GetAuthorName();
