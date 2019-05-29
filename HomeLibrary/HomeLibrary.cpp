@@ -126,7 +126,9 @@ int main()
 			
 		}
 		case 4:
-			
+			cout << "Введите название книги\n";
+			cin >> str;
+			homeLibary.DelleteByNameBook(str);
 			break;
 			
 		default:
