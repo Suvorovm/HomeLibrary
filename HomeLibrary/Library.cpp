@@ -8,6 +8,17 @@ Library::Library()
 	books.push_back(firstBook);
 }
 
+void Library::DelleteByNameBook(string nameBook)
+{
+	if (books.capacity() == 0) throw runtime_error("Ther is no elemets");
+	for (size_t i = 0; i < books.capacity(); i++)
+	{
+		if (books[i].GetNameBook() == nameBook) {
+			books.erase(books.begin() + i);
+		}
+	}
+}
+
 void Library::AddBook(Book bk)
 {
 	books.push_back(bk);

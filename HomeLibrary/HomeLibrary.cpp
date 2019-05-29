@@ -38,44 +38,54 @@ int main()
 	tm year;
 	while (true) {
 		printMenu();
+		string str;
+		tm parametrs;
+		vector<Book> result;
+		cin >> forCase;
 		switch (forCase)
 		{
-		case 1:
+		case 1: {
 			printAddBook();
 			cin >> nameAuth >> surname;
 			cin >> tmp;
-				cin >> nameBook >> genre;
-				year.tm_year = stoi(tmp);
-				Book mybook(nameAuth, surname, genre, year, nameBook);
-				homeLibary.AddBook(mybook);
+			cin >> nameBook >> genre;
+			year.tm_year = stoi(tmp);
+			Book mybook(nameAuth, surname, genre, year, nameBook);
+			homeLibary.AddBook(mybook);
 			break;
-		case 2:
+		}
+		case 2: {
+			printFindBookBy();
 			int switch_on = 15;
+			cin >> switch_on;
 			switch (switch_on)
-			{
-				printFindBookBy();
-			case 1:
-				string str;
+			{				
+			case 1: {
 				cin >> str;
-			auto result=homeLibary.GetBooksByAuthName(str);
+				 result = homeLibary.GetBooksByAuthName(str);
 				break;
-			case 2:
-				string str;
+			}
+			case 2: {
 				cin >> str;
-				tm parametrs;
-					parametrs.tm_year= stoi(str);
-				auto result = homeLibary.GetBooksByYear(parametrs);
+				parametrs.tm_year = stoi(str);
+				 result = homeLibary.GetBooksByYear(parametrs);
 				break;
-
-			case 3:
-				string str;
+			}
+			case 3: {
 				cin >> str;
-				auto result = homeLibary.GetBooksBySurname(str);
-				break;
+				 result = homeLibary.GetBooksBySurname(str);				
+				break;				
+			}
 			default:
 				break;
 			}
 			break;
+			cout << "Книга";
+			for (size_t i = 0; i < result.capacity(); i++)
+			{
+
+			}
+		}
 		case 3:
 			int n;
 			break;

@@ -10,6 +10,8 @@ private:
 public:
 	
 	Library();
+	//удаление из класса
+	void DelleteByNameBook(string nameBook);
 	void AddBook(Book bk);
 	//возвращаем список, т.к может быть несколько авторов с одной фамилией
 	vector<Book> GetBooksByAuthName(string AuthorName);
