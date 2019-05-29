@@ -35,6 +35,8 @@ string Book::GetGenr()
 	return genre;
 }
 
+
+
 Book::Book(string authorName, string surname, string genre, tm year,string nameBook)
 {
 

@@ -96,9 +96,33 @@ int main()
 			}
 			break;
 		}
-		case 3:
-			int n;
+		case 3: {
+			int n = 125;
+			cout << "1 -  Сортировка по Имени автора\n";
+			cin >> n;
+			vector<Book> result;		
+			switch (n)
+			{
+			case 1:
+				result =homeLibary.SortByAutherName();
+				break;
+			default:
+				break;
+			}
+			cout << "Отсортированный список по имени автора\n";
+			if (result.capacity() != 0) {
+				for (size_t i = 0; i < result.capacity(); i++)
+				{
+					cout << result[i].GetAuthorName() << "\t" << result[i].GetGenr() << "\t" << result[i].GetNameBook()
+						<< "\t" << result[i].GetSurname() << "\t" << result[i].GetYear().tm_year << "\n";
+				}
+			}
+			else {
+				cout << "Нечего сортировать";
+			}
 			break;
+			
+		}
 		case 4:
 			
 			break;

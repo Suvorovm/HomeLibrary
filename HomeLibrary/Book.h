@@ -16,6 +16,7 @@ public:
 	string GetNameBook();
 	tm GetYear();
 	string GetGenr();
+
 	//Конструктор с параметрами
 	Book(string authorName, string shurName, string genre, tm year,string nameBook);
 	//конструктор копирования

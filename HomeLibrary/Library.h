@@ -2,6 +2,7 @@
 #include<vector>	
 #include <string>
 #include "Book.h"
+#include "stdlib.h"
 using namespace std;
 class Library
 {
@@ -13,6 +14,7 @@ public:
 	//удаление из класса
 	void DelleteByNameBook(string nameBook);
 	void AddBook(Book bk);
+	vector<Book> SortByAutherName();
 	//возвращаем список, т.к может быть несколько авторов с одной фамилией
 	vector<Book> GetBooksByAuthName(string AuthorName);
 	//Список книг в данный год
