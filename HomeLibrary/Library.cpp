@@ -1,13 +1,18 @@
-#include "pch.h"
+
 #include "Library.h"
 #include "Book.h"
 #include "stdlib.h"
 #include<string>
-Library::Library()
+
+
+template<typename T>
+inline Library<T>::Library(T indeficator)
 {
+	this->indeficatorLibrary = indeficator;
 }
 
-void Library::DelleteByNameBook(string nameBook)
+template <typename T>
+void Library<T>::DelleteByNameBook(string nameBook)
 {
 	if (books.capacity() == 0) throw runtime_error("Ther is no elemets");
 	for (size_t i = 0; i < books.capacity(); i++)
@@ -17,13 +22,13 @@ void Library::DelleteByNameBook(string nameBook)
 		}
 	}
 }
-
-void Library::AddBook(Book bk)
+template <typename T>
+void Library<T>::AddBook(Book bk)
 {
 	books.push_back(bk);
 }
-
-vector<Book> Library::SortByAutherName()
+template <typename T>
+vector<Book> Library<T>::SortByAutherName()
 {
 	vector<Book> result(books);
 	for (size_t i = 1; i < books.capacity(); i++)
@@ -43,8 +48,8 @@ vector<Book> Library::SortByAutherName()
 	}
 	return result;
 }
-
-vector<Book> Library::GetBooksByAuthName(string authorName)
+template <typename T>
+vector<Book> Library<T>::GetBooksByAuthName(string authorName)
 {
 	vector<Book> resultVector;
 	for (size_t i = 0; i < books.capacity(); i++)
@@ -55,8 +60,8 @@ vector<Book> Library::GetBooksByAuthName(string authorName)
 	}
 	return books;
 }
-
-vector<Book> Library::GetBooksByYear(tm year)
+template <typename T>
+vector<Book> Library<T>::GetBooksByYear(tm year)
 {
 	vector<Book> result;
 	for (size_t i = 0; i < books.capacity(); i++)
@@ -66,8 +71,8 @@ vector<Book> Library::GetBooksByYear(tm year)
 	}
 	return result;
 }
-
-vector<Book> Library::GetBooksBySurname(string shurname)
+template <typename T>
+vector<Book> Library<T>::GetBooksBySurname(string shurname)
 {
 	vector<Book> resultVector;
 	for (size_t i = 0; i < books.capacity(); i++)
@@ -78,13 +83,13 @@ vector<Book> Library::GetBooksBySurname(string shurname)
 	}
 	return books;
 }
-
-Library::Library(Book book)
+template <typename T>
+Library<T>::Library(Book book)
 {
 	books.push_back(book);
 }
-
-Library::Library(Library & libr)
+template <typename T>
+Library<T>::Library(Library<T> & libr)
 {	
 	for (size_t i = 0; i < libr.books.capacity(); i++)
 	{
@@ -93,7 +98,20 @@ Library::Library(Library & libr)
 	}
 }
 
-
-Library::~Library()
+template <typename T>
+Library<T>::~Library()
 {
 }
+
+template<typename T>
+inline T Library<T>::GetindeficatorLibrary()
+{
+	return indeficatorLibrary;
+}
+
+template<typename T>
+Library<T>::Library()
+{
+}
+
+#include "pch.h"

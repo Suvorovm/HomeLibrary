@@ -30,7 +30,8 @@ int main()
 	SetConsoleCP(1251);
 	SetConsoleOutputCP(1251);
 	int forCase = 5;
-	Library homeLibary;
+	Library<string> homeLibary("Домашняя библиотека");
+	Library<int> homeLibaryInteger(1547);
 	
 	bool flag = true;
 	while (flag) {

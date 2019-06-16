@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractBook.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="Library.h" />
     <ClInclude Include="pch.h" />

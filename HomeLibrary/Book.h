@@ -1,23 +1,25 @@
 #pragma once
 #include<string>
 #include<iostream>
+#include "AbstractBook.h"
 using namespace std;
-class Book
+class Book:public AbstractBook
 {
 private:
-	string authorName;//поля класа 
+	//string authorName;//поля класа 
 	string surname;
 	string genre;
 	string nameBook;
-	tm year;
+	//tm year;
 	//копирование строк
 	string deepCopyng(string source);
+	
 public:
 	//Геттеры - возварщающие значения
-	string GetAuthorName();
+	string  GetAuthorName() override;
 	string GetSurname();
 	string GetNameBook();
-	tm GetYear();
+	tm GetYear() override;
 	string GetGenr();
 
 	//Конструктор с параметрами

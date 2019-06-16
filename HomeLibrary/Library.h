@@ -4,13 +4,19 @@
 #include "Book.h"
 #include "stdlib.h"
 using namespace std;
+template <typename T>
 class Library
 {
 private:
+
+	T indeficatorLibrary;
 	vector<Book> books;
 public:
+	//return the indeficator 
 	
+	T GetindeficatorLibrary();
 	Library();
+	Library(T indeficator);
 	//удаление из класса
 	void DelleteByNameBook(string nameBook);
 	void AddBook(Book bk);
@@ -28,4 +34,5 @@ public:
 	//деструктор
 	~Library();
 };
+#include "Library.cpp"
 
