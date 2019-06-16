@@ -89,8 +89,7 @@ int main()
 			if (result.capacity() != 0) {
 				for (size_t i = 0; i < result.capacity(); i++)
 				{
-					cout << result[i].GetAuthorName() <<"\t"<<result[i].GetGenr()<<"\t"<<result[i].GetNameBook()
-						<<"\t"<<result[i].GetSurname()<<"\t"<<result[i].GetYear().tm_year<<"\n";
+					cout << result[i]<<"\n";
 				}
 			}
 			else {
@@ -115,8 +114,7 @@ int main()
 			if (result.capacity() != 0) {
 				for (size_t i = 0; i < result.capacity(); i++)
 				{
-					cout << result[i].GetAuthorName() << "\t" << result[i].GetGenr() << "\t" << result[i].GetNameBook()
-						<< "\t" << result[i].GetSurname() << "\t" << result[i].GetYear().tm_year << "\n";
+					cout << result[i]<< "\n";
 				}
 			}
 			else {
@@ -136,6 +134,18 @@ int main()
 			break;
 		}
 		
+	}
+	tm time;
+	time.tm_year = 1999;
+	Book bk1("Федор", "Достоевский", "Роман", time, "преступление и наказание");
+	Book bk2("Федор", "Достоевский", "Роман", time, "преступление и наказание");
+	cout << "Сравнение книг"<<"1 - \t"<<bk1<<"И"<<bk2;
+	if (bk1 == bk2) {
+		cout << "\nРавны!!!!!!!!!!!!!";
+	}
+	else
+	{
+		cout << "неравны";
 	}
 	return 0;
 }

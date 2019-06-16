@@ -1,5 +1,6 @@
 #pragma once
 #include<string>
+#include<iostream>
 using namespace std;
 class Book
 {
@@ -27,6 +28,11 @@ public:
 	Book();
 	//диструктор
 	~Book();
-	
+	//Перегрузка вывода
+	friend ostream& operator<<(std::ostream &os, const Book &c);
+	//перегрузка сравнения
+	friend bool operator==(Book first, Book second);
+	//перегрузка !=
+	friend bool operator !=(Book first, Book second);
 };
 

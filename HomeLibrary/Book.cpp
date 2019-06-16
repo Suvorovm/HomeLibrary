@@ -65,3 +65,20 @@ Book::Book(const Book & book)
 Book::~Book()
 {
 }
+
+ostream & operator<<(std::ostream & os, const Book & c)
+{
+	os << "Имя автора\t" << c.authorName << "Фамилия автора\t" << c.surname << "Год издания = \t" << c.year.tm_year << "Жанр =\t " << c.genre;
+	return os;
+}
+
+bool operator==(Book first, Book second)
+{
+	return first.authorName == second.authorName&&first.genre == second.genre
+		&& first.nameBook == second.nameBook && first.surname == second.surname&&first.year.tm_year == second.year.tm_year;
+}
+
+bool operator!=(Book first, Book second)
+{
+	return !(first == second);
+}
